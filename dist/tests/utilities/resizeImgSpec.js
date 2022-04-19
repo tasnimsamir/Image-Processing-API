@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const __1 = __importDefault(require("../.."));
 const request = (0, supertest_1.default)(__1.default);
-describe("Testing Routes of the APP", () => {
+describe("Testing Resize Image API", () => {
     it("Endpoint: /api/processimg?name=fjord&width=500&height=500", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get("/api/processimg?name=fjord&width=500&height=500");
         expect(response.status).toBe(200);

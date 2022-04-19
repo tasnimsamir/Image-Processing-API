@@ -19,9 +19,15 @@ processImge.get('/',queryParams, isExist,(req,res) => {
     if (!width && !height){res.status(200).sendFile(imgLoc);}
     else{
         if (!existsSync(resizedimg)){
-            resizeImg(imgLoc,parseInt(width),parseInt(height)).then(()=>{
-            res.status(200).sendFile(resizedimg);
-        });}
+            try{
+                resizeImg(imgLoc,parseInt(width),parseInt(height)).then(()=>{
+                    res.status(200).sendFile(resizedimg);
+                });
+            }
+            catch(error){
+                res.status(400).send(`ERROR in processing image: ${error}`);
+            };
+        }
         else{
             res.status(400).send('The resized image is alraedy exists!')
         }  

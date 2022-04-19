@@ -1,5 +1,7 @@
 import express from 'express';
 
+// Middleware to validate all query parameters in endpoints
+
 const queryParams = (req: express.Request,res: express.Response,next: Function): express.Response|void =>{
     const name = req.query.name as string;
     const width = req.query.width as string;

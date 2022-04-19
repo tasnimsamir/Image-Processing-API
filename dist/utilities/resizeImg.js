@@ -20,13 +20,7 @@ const resizeImg = (filepath, width, height) => __awaiter(void 0, void 0, void 0,
     const path = filepath.split('/');
     const imgname = path[path.length - 1].split('.')[0];
     const outputimg = out_dir + `/${imgname}_${width}_${height}.jpg`;
-    try {
-        // console.log(`filepath= ${filepath}`);
-        let data = yield (0, sharp_1.default)(filepath).resize(width, height).jpeg().toBuffer();
-        fs_1.default.writeFileSync(outputimg, data);
-    }
-    catch (error) {
-        console.log(error);
-    }
+    let data = yield (0, sharp_1.default)(filepath).resize(width, height).jpeg().toBuffer();
+    fs_1.default.writeFileSync(outputimg, data);
 });
 exports.default = resizeImg;
