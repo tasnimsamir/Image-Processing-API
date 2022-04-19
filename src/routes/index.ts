@@ -1,6 +1,5 @@
 import express from 'express';
-import resizeRoute from './api/resizeImages';
-import getRoute from './api/getImage';
+import processImge from './api/processImg';
 
 const routes = express.Router();
 
@@ -8,7 +7,6 @@ routes.get('/', (req,res) => {
     res.send('Main API Route..');
 });
 
-routes.use('/resize',resizeRoute);
-routes.use('/getimage',getRoute);
+routes.use('/processimg',processImge);
 
 export default routes;
