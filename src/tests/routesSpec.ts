@@ -8,17 +8,6 @@ describe("Testing Routes of the APP", (): void => {
 		const response = await request.get("/api/processimg?name=fjord");
 		expect(response.status).toBe(200);
 	});
-    it("Endpoint: /api/processimg?name=fjord&width=500&height=500", async (): Promise<void> => {
-		const response = await request.get("/api/processimg?name=fjord&width=500&height=500");
-		expect(response.status).toBe(200);
-	});
-
-
-    it("Endpoint: /api/processimg?name=fjorda", async (): Promise<void> => {
-		const response = await request.get("/api/processimg?name=fjorda");
-		expect(response.status).toBe(400);
-		expect(response.text).toBe("ERROR!! image: fjorda is not found.");
-	});
 
     it("Endpoint: /api/processimg?name=fjord&width=200&height=200", async (): Promise<void> => {
 		const response = await request.get("/api/processimg?name=fjord&width=200&height=200");
