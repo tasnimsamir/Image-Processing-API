@@ -15,10 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const __1 = __importDefault(require("../.."));
 const request = (0, supertest_1.default)(__1.default);
-describe("Testing images Existance", () => {
-    it("Endpoint: /api/processimg?name=fjorda", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjorda");
+describe('Testing images Existance', () => {
+    it('Endpoint: /api/processimg?name=fjorda', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjorda');
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!! image: fjorda is not found.");
+        expect(response.text).toBe('ERROR!! image: fjorda is not found.');
     }));
 });
+//# sourceMappingURL=isExistSpec.js.map

@@ -15,18 +15,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const __1 = __importDefault(require(".."));
 const request = (0, supertest_1.default)(__1.default);
-describe("Testing Routes of the APP", () => {
-    it("Endpoint: /api/processimg?name=fjord", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjord");
+describe('Testing Routes of the APP', () => {
+    it('Endpoint: /api/processimg?name=fjord', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord');
         expect(response.status).toBe(200);
     }));
-    it("Endpoint: /api/processimg?name=fjord&width=200&height=200", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjord&width=200&height=200");
-        expect(response.status).toBe(400);
-        expect(response.text).toBe("The resized image is alraedy exists!");
+    it('Endpoint: /api/processimg?name=fjord&width=500&height=500', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord&width=500&height=500');
+        expect(response.status).toBe(200);
     }));
-    it("Endpoint: /invalidEndpoint", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/invalidEndpoint");
+    it('Endpoint: /api/processimg?name=fjord&width=200&height=200', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord&width=200&height=200');
+        expect(response.status).toBe(400);
+        expect(response.text).toBe('The resized image is alraedy exists!');
+    }));
+    it('Endpoint: /invalidEndpoint', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/invalidEndpoint');
         expect(response.status).toBe(404);
     }));
 });
+//# sourceMappingURL=routesSpec.js.map

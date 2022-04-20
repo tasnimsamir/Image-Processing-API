@@ -15,12 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const sharp_1 = __importDefault(require("sharp"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const out_dir = path_1.default.resolve('./') + "/src/assets/resizedImages";
+const out_dir = path_1.default.resolve('./') + '/src/assets/resizedImages';
 const resizeImg = (filepath, width, height) => __awaiter(void 0, void 0, void 0, function* () {
     const path = filepath.split('/');
     const imgname = path[path.length - 1].split('.')[0];
     const outputimg = out_dir + `/${imgname}_${width}_${height}.jpg`;
-    let data = yield (0, sharp_1.default)(filepath).resize(width, height).jpeg().toBuffer();
+    const data = yield (0, sharp_1.default)(filepath).resize(width, height).jpeg().toBuffer();
     fs_1.default.writeFileSync(outputimg, data);
 });
 exports.default = resizeImg;
+//# sourceMappingURL=resizeImg.js.map

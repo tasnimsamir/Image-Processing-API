@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// Middleware to validate all query parameters in endpoints
 const queryParams = (req, res, next) => {
     const name = req.query.name;
     const width = req.query.width;
@@ -31,11 +32,11 @@ const queryParams = (req, res, next) => {
         }
         else {
             next();
-        }
-        ; // go to next middleware
+        } // go to next middleware
     }
     catch (error) {
         res.send(error);
     }
 };
 exports.default = queryParams;
+//# sourceMappingURL=validation.js.map

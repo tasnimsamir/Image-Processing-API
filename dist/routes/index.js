@@ -11,3 +11,4 @@ routes.get('/', (req, res) => {
 });
 routes.use('/processimg', processImg_1.default);
 exports.default = routes;
+//# sourceMappingURL=index.js.map

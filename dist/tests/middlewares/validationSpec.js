@@ -15,40 +15,41 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const __1 = __importDefault(require("../.."));
 const request = (0, supertest_1.default)(__1.default);
-describe("Testing Validations of the APP", () => {
-    it("Endpoint: /api/processimg", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg");
+describe('Testing Validations of the APP', () => {
+    it('Endpoint: /api/processimg', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg');
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! You should enter filename");
+        expect(response.text).toBe('ERROR!!! You should enter filename');
     }));
-    it("Endpoint: /api/processimg?name=fjord&width=200", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjord&width=200");
+    it('Endpoint: /api/processimg?name=fjord&width=200', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord&width=200');
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! You should enter required height");
+        expect(response.text).toBe('ERROR!!! You should enter required height');
     }));
-    it("Endpoint: /api/processimg?name=fjord&height=200", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjord&height=200");
+    it('Endpoint: /api/processimg?name=fjord&height=200', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord&height=200');
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! You should enter required width");
+        expect(response.text).toBe('ERROR!!! You should enter required width');
     }));
     it("Endpoint: /api/processimg?name=fjord&width='200'&height=210", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get("/api/processimg?name=fjord&width='200'&height=210");
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! width should be Number");
+        expect(response.text).toBe('ERROR!!! width should be Number');
     }));
     it("Endpoint: /api/processimg?name=fjord&width=200&height='210'", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get("/api/processimg?name=fjord&width=200&height='210'");
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! height should be Number");
+        expect(response.text).toBe('ERROR!!! height should be Number');
     }));
-    it("Endpoint: /api/processimg?name=fjord&width=-200&height=210", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjord&width=-200&height=210");
+    it('Endpoint: /api/processimg?name=fjord&width=-200&height=210', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord&width=-200&height=210');
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! width should be positive number");
+        expect(response.text).toBe('ERROR!!! width should be positive number');
     }));
-    it("Endpoint: /api/processimg?name=fjord&width=200&height=-210", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get("/api/processimg?name=fjord&width=200&height=-210");
+    it('Endpoint: /api/processimg?name=fjord&width=200&height=-210', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/processimg?name=fjord&width=200&height=-210');
         expect(response.status).toBe(400);
-        expect(response.text).toBe("ERROR!!! height should be positive number");
+        expect(response.text).toBe('ERROR!!! height should be positive number');
     }));
 });
+//# sourceMappingURL=validationSpec.js.map
