@@ -32,7 +32,7 @@ processImge.get(
           res.status(400).send(`ERROR in processing image: ${error}`);
         }
       } else {
-        res.status(400).send('The resized image is alraedy exists!');
+        res.sendFile(resizedimg);
       }
     }
   }

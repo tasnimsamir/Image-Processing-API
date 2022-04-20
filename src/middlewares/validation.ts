@@ -20,9 +20,9 @@ const queryParams = (
       return res.status(400).send('ERROR!!! You should enter required width');
     } else if (!height) {
       return res.status(400).send('ERROR!!! You should enter required height');
-    } else if (+width < 0) {
+    } else if (+width <= 0) {
       return res.status(400).send('ERROR!!! width should be positive number');
-    } else if (+height < 0) {
+    } else if (+height <= 0) {
       return res.status(400).send('ERROR!!! height should be positive number');
     } else if (isNaN(+width)) {
       return res.status(400).send('ERROR!!! width should be Number');
