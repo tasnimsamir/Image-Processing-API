@@ -26,8 +26,7 @@ describe('Testing Routes of the APP', () => {
     }));
     it('Endpoint: /api/processimg?name=fjord&width=200&height=200', () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get('/api/processimg?name=fjord&width=200&height=200');
-        expect(response.status).toBe(400);
-        expect(response.text).toBe('The resized image is alraedy exists!');
+        expect(response.status).toBe(200);
     }));
     it('Endpoint: /invalidEndpoint', () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get('/invalidEndpoint');

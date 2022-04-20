@@ -19,8 +19,7 @@ describe('Testing Routes of the APP', (): void => {
     const response = await request.get(
       '/api/processimg?name=fjord&width=200&height=200'
     );
-    expect(response.status).toBe(400);
-    expect(response.text).toBe('The resized image is alraedy exists!');
+    expect(response.status).toBe(200);
   });
 
   it('Endpoint: /invalidEndpoint', async (): Promise<void> => {

@@ -32,7 +32,7 @@ processImge.get('/', validation_1.default, isExist_1.default, (req, res) => {
             }
         }
         else {
-            res.status(400).send('The resized image is alraedy exists!');
+            res.sendFile(resizedimg);
         }
     }
 });
