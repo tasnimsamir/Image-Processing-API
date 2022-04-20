@@ -56,6 +56,6 @@ Building an API with scalable and maintainable code that can be used in two diff
 * Validation of query parameters
 
 
-# Enterprise Level APP:
+# Enterprise Level Application:
 
 Processing hundreds of images with multiple thumbnail sizes for an eCommerce solution.
