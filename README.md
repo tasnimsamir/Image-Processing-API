@@ -48,14 +48,6 @@ Building an API with scalable and maintainable code that can be used in two diff
 1. /api/processimg?name=fjord >> Placeholder API
 2. /api/processimg?name=fjord&width=200&height=200 >> for Image Scaling
 
-
-# Errors handled !!
-* Check if image directories are found or make it.
-* Image existence
-* Thumbnail existence (handle caching)
-* Validation of query parameters
-
-
 # Enterprise Level Application:
 
 Processing hundreds of images with multiple thumbnail sizes for an eCommerce solution.
